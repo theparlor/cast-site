@@ -144,6 +144,205 @@
   </div>
 </div></section>
 
+<section id="diagrams">
+<style>
+  #diagrams .diag-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
+  #diagrams .diag-block{background:var(--ground-2);border:1px solid var(--line);border-radius:12px;padding:22px 20px 18px}
+  #diagrams .diag-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:12px;font-family:'Spectral'}
+  @media(max-width:760px){#diagrams .diag-pair{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+  <div class="kicker">How it comes to be &middot; where it lives</div>
+  <h2>Two views of the registry.</h2>
+  <p class="body">The first diagram traces how a single entity enters Cast &mdash; from source harvesting through identity structuring and corpus building to the rendered voice deposited downstream. The second shows where Cast sits in the portfolio: what feeds it, what it powers, and the Intent governance loop that keeps identity and substance coherent.</p>
+
+  <div class="diag-pair">
+
+    <!-- DIAGRAM 1: FLOW — How it comes to be -->
+    <div class="diag-block">
+      <div class="diag-label">How it comes to be</div>
+      <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Flow diagram: how a Cast entity is built">
+        <defs>
+          <linearGradient id="cf-flow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E8772B"/>
+            <stop offset="100%" stop-color="#7E8A98"/>
+          </linearGradient>
+          <linearGradient id="cf-identity" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#9A7F4E" stop-opacity="0.7"/>
+          </linearGradient>
+          <linearGradient id="cf-corpus" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E8772B" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#F2A24A" stop-opacity="0.7"/>
+          </linearGradient>
+          <marker id="carr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#C9A45C" opacity="0.75"/>
+          </marker>
+          <marker id="carr-mol" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#E8772B" opacity="0.75"/>
+          </marker>
+          <marker id="carr-steel" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#7E8A98" opacity="0.75"/>
+          </marker>
+        </defs>
+
+        <!-- Node 1: Harvest sources -->
+        <rect x="8" y="122" width="72" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="44" y="137" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#ECE3D4">Harvest</text>
+        <text x="44" y="149" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#ECE3D4">sources</text>
+
+        <!-- Arrow 1→2 -->
+        <line x1="80" y1="142" x2="98" y2="142" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#carr)"/>
+
+        <!-- Node 2: Assess -->
+        <rect x="100" y="122" width="68" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="134" y="137" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#ECE3D4">Assess</text>
+        <text x="134" y="149" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">depth + tier</text>
+
+        <!-- Arrow 2→split -->
+        <line x1="168" y1="142" x2="186" y2="142" stroke="#C9A45C" stroke-width="1.4"/>
+
+        <!-- Vertical fork -->
+        <line x1="186" y1="90" x2="186" y2="194" stroke="#3a2f23" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="186" y1="90" x2="200" y2="90" stroke="#C9A45C" stroke-width="1.2" marker-end="url(#carr)"/>
+        <line x1="186" y1="194" x2="200" y2="194" stroke="#E8772B" stroke-width="1.2" marker-end="url(#carr-mol)"/>
+
+        <!-- Node A: Identity (registry YAML) -->
+        <rect x="202" y="70" width="82" height="42" rx="7" fill="#211a13" stroke="#C9A45C" stroke-width="1.4"/>
+        <text x="243" y="87" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#E3C688">Identity</text>
+        <text x="243" y="99" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#9A7F4E">registry YAML</text>
+        <text x="243" y="108" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">closed-world</text>
+
+        <!-- Node B: Corpus -->
+        <rect x="202" y="174" width="82" height="42" rx="7" fill="#211a13" stroke="#E8772B" stroke-width="1.4"/>
+        <text x="243" y="191" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#F2A24A">Corpus</text>
+        <text x="243" y="203" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#C9A45C">substance</text>
+        <text x="243" y="212" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">open-world</text>
+
+        <!-- Synthesize node (merging) -->
+        <line x1="284" y1="91" x2="314" y2="118" stroke="#C9A45C" stroke-width="1.1" stroke-opacity="0.8" marker-end="url(#carr)"/>
+        <line x1="284" y1="195" x2="314" y2="168" stroke="#E8772B" stroke-width="1.1" stroke-opacity="0.8" marker-end="url(#carr-mol)"/>
+
+        <rect x="316" y="116" width="80" height="44" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="356" y="133" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#ECE3D4">Synthesize</text>
+        <text x="356" y="145" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">voice</text>
+        <text x="356" y="155" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">Crucible</text>
+
+        <!-- Arrow: synthesize → downstream -->
+        <line x1="396" y1="138" x2="414" y2="138" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#carr)"/>
+
+        <!-- Downstream fork: Forge + Voices -->
+        <line x1="414" y1="138" x2="414" y2="108" stroke="#7E8A98" stroke-width="1" stroke-opacity="0.7"/>
+        <line x1="414" y1="138" x2="414" y2="168" stroke="#E8772B" stroke-width="1" stroke-opacity="0.7"/>
+        <line x1="414" y1="108" x2="428" y2="108" stroke="#7E8A98" stroke-width="1.1" marker-end="url(#carr-steel)"/>
+        <line x1="414" y1="168" x2="428" y2="168" stroke="#E8772B" stroke-width="1.1" marker-end="url(#carr-mol)"/>
+
+        <!-- Forge box -->
+        <rect x="430" y="91" width="44" height="34" rx="6" fill="#17120e" stroke="#9A7F4E" stroke-width="1.1"/>
+        <text x="452" y="105" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="9" font-weight="700" fill="#C9A45C">Forge</text>
+        <text x="452" y="117" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">personas</text>
+
+        <!-- Voices box -->
+        <rect x="430" y="151" width="44" height="34" rx="6" fill="#17120e" stroke="#E8772B" stroke-width="1.1"/>
+        <text x="452" y="165" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="9" font-weight="700" fill="#F2A24A">Voices</text>
+        <text x="452" y="177" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">panels</text>
+
+        <!-- One-way derivation label -->
+        <text x="390" y="82" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">one-way derivation</text>
+
+        <!-- Bottom label -->
+        <text x="240" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Harvest &rarr; Assess &rarr; Identity + Corpus &rarr; Synthesize &rarr; Forge &amp; Voices</text>
+      </svg>
+    </div>
+
+    <!-- DIAGRAM 2: ARCHITECTURE — Where it lives -->
+    <div class="diag-block">
+      <div class="diag-label">Where it lives</div>
+      <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram: Cast position in the portfolio">
+        <defs>
+          <linearGradient id="ag-cast2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#2b2219" stop-opacity="0.9"/>
+          </linearGradient>
+          <linearGradient id="ag-forge2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9A7F4E" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#211a13" stop-opacity="0.8"/>
+          </linearGradient>
+          <marker id="aarr2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#C9A45C" opacity="0.8"/>
+          </marker>
+          <marker id="aarr2-mol" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#E8772B" opacity="0.8"/>
+          </marker>
+          <marker id="aarr2-steel" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#7E8A98" opacity="0.8"/>
+          </marker>
+        </defs>
+
+        <!-- Intent loop veil — faint background -->
+        <rect x="10" y="14" width="460" height="254" rx="12" fill="none" stroke="#3a2f23" stroke-width="1.5" stroke-dasharray="5,4"/>
+        <text x="26" y="28" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#3a2f23" font-style="italic">Intent loop &mdash; Notice &middot; Spec &middot; Execute &middot; Observe</text>
+
+        <!-- Crucible box — top-left (feeds Cast) -->
+        <rect x="22" y="46" width="88" height="44" rx="9" fill="#2b2219" stroke="#9A7F4E" stroke-width="1.1"/>
+        <text x="66" y="64" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="11" font-weight="700" fill="#C9A45C">Crucible</text>
+        <text x="66" y="78" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">synthesis engine</text>
+
+        <!-- Cast box — centre -->
+        <rect x="168" y="76" width="140" height="140" rx="12" fill="url(#ag-cast2)" stroke="#C9A45C" stroke-width="1.8"/>
+        <text x="238" y="105" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="17" font-weight="800" fill="#E3C688">Cast</text>
+        <line x1="186" y1="114" x2="290" y2="114" stroke="#3a2f23" stroke-width="0.8"/>
+        <!-- identity/corpus layers inside Cast -->
+        <rect x="186" y="122" width="104" height="22" rx="5" fill="rgba(201,164,92,0.10)" stroke="#9A7F4E" stroke-width="0.8"/>
+        <text x="238" y="136" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#E3C688">identity (registry)</text>
+        <rect x="186" y="150" width="104" height="22" rx="5" fill="rgba(232,119,43,0.09)" stroke="#9A7F4E" stroke-width="0.8"/>
+        <text x="238" y="164" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#F2A24A">corpus (substance)</text>
+        <!-- three-layer badge -->
+        <rect x="186" y="180" width="104" height="16" rx="4" fill="rgba(201,164,92,0.07)" stroke="#9A7F4E" stroke-width="0.7"/>
+        <text x="238" y="191" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E">identity · corpus · rendering</text>
+
+        <!-- Forge box — below Cast, reads from Cast -->
+        <rect x="22" y="174" width="88" height="44" rx="9" fill="url(#ag-forge2)" stroke="#9A7F4E" stroke-width="1.1"/>
+        <text x="66" y="192" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="11" font-weight="700" fill="#C9A45C">Forge</text>
+        <text x="66" y="206" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">renders personas</text>
+
+        <!-- Voices box — right of Cast -->
+        <rect x="356" y="112" width="96" height="44" rx="9" fill="#211a13" stroke="#E8772B" stroke-width="1.3"/>
+        <text x="404" y="131" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="13" font-weight="700" fill="#F2A24A">Voices</text>
+        <text x="404" y="146" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">judgment panels</text>
+
+        <!-- Crucible → Cast arrow (deposits synthesis) -->
+        <line x1="110" y1="68" x2="164" y2="100" stroke="#9A7F4E" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#aarr2)"/>
+        <text x="134" y="78" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F" font-style="italic">deposits</text>
+
+        <!-- Cast → Forge arrow (one-way derivation) -->
+        <line x1="168" y1="172" x2="112" y2="194" stroke="#C9A45C" stroke-width="1.3" marker-end="url(#aarr2)"/>
+        <text x="132" y="168" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">reads</text>
+
+        <!-- Cast → Voices arrow (reads identity) -->
+        <line x1="308" y1="134" x2="354" y2="134" stroke="#C9A45C" stroke-width="1.5" marker-end="url(#aarr2)"/>
+        <text x="330" y="126" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">reads</text>
+
+        <!-- Forge + Voices → downstream (you) -->
+        <rect x="356" y="190" width="96" height="36" rx="8" fill="#211a13" stroke="#7E8A98" stroke-width="1.1"/>
+        <text x="404" y="206" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="11" font-weight="700" fill="#AAB4C0">You</text>
+        <text x="404" y="219" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#7E8A98">grounded output</text>
+
+        <line x1="404" y1="156" x2="404" y2="188" stroke="#E8772B" stroke-width="1.1" stroke-opacity="0.7" marker-end="url(#aarr2-mol)"/>
+        <line x1="110" y1="216" x2="354" y2="210" stroke="#9A7F4E" stroke-width="0.9" stroke-dasharray="3,4" marker-end="url(#aarr2-steel)"/>
+        <text x="230" y="228" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#5B6573" font-style="italic">Forge also projects to You</text>
+
+        <!-- Intent loop corner cycle arrow -->
+        <path d="M460,40 Q470,149 460,258" fill="none" stroke="#3a2f23" stroke-width="1" stroke-dasharray="4,5" marker-end="url(#aarr2)"/>
+
+        <!-- Bottom label -->
+        <text x="238" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Crucible (synthesis) &rarr; Cast (identity) &rarr; Forge &amp; Voices &rarr; You</text>
+      </svg>
+    </div>
+
+  </div>
+</div></section>
+
 <section id="veil" class="veil-section"><div class="wrap">
   <div class="kicker">Behind the veil</div>
   <h2>How Cast was forged.</h2>
