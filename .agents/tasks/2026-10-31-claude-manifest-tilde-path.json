@@ -1,0 +1,15 @@
+{
+  "id": "2026-10-31-claude-manifest-tilde-path",
+  "provider": "claude",
+  "status": "complete",
+  "branch": "agent/claude/2026-10-31-manifest-tilde-path",
+  "worktree": "../cast-site-wt-2026-10-31-manifest-tilde-path",
+  "base_commit": "7908de5",
+  "objective": "the name-purge manifest names the bundle with ~ instead of a home path (guard home-path marker)",
+  "owned_paths": [
+    ".intent/retirements"
+  ],
+  "started": "2026-10-31T04:55:13-04:00",
+  "handoff": ".agents/handoffs/2026-10-31-claude-manifest-tilde-path.md",
+  "landed": "2026-10-31T04:55:38-04:00"
+}
