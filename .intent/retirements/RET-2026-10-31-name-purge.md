@@ -6,7 +6,7 @@ created: 2026-10-31
 kind: history-rewrite
 repo: git@github.com:theparlor/cast-site.git
 repo_visibility: public
-holds_it: bundle /Users/brien/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle (git bundle verify passed 2026-10-31, sha256 710ad2d0f99fadf9fdc925c57ead9e237b3f5e9faff69660643a42e6868483fe, 182737 bytes, every ref as of the rewrite); local tag archive/pre-name-purge-2026-10-31 in the primary checkout (never pushed)
+holds_it: bundle ~/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle (git bundle verify passed 2026-10-31, sha256 710ad2d0f99fadf9fdc925c57ead9e237b3f5e9faff69660643a42e6868483fe, 182737 bytes, every ref as of the rewrite); local tag archive/pre-name-purge-2026-10-31 in the primary checkout (never pushed)
 tip_before: 53c23350f3fb56b09d8bc51b19864de7b445e4e2
 tip_after: 3eca7b9c7c6cb14659549608bdcfb9c5d1c10f4c
 commits_before: 57
@@ -58,8 +58,8 @@ Nothing here is gone. The bundle holds every ref of the repo as it stood on GitH
 outside the repo; the local tag pins the last pre-rewrite main in the primary checkout.
 
 ```bash
-git bundle verify /Users/brien/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle
-git clone /Users/brien/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle cast-site-pre-name-purge-2026-10-31
+git bundle verify ~/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle
+git clone ~/.local/state/retired-history-bundles/cast-site-pre-name-purge-2026-10-31.bundle cast-site-pre-name-purge-2026-10-31
 # the last pre-rewrite main in the primary checkout:
 git -C <primary> show archive/pre-name-purge-2026-10-31:.agents/bin/retirement.py
 ```
